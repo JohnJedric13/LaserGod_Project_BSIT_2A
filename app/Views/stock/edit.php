@@ -49,6 +49,18 @@
                     <input type="date" name="expire" class="form-control" value="<?= $stocks['expire'] ?>">
                 </div>
 
+                <div class="mb-3">
+                <label class="form-label">Category</label>
+                        <select name="category_id">
+                               <?php foreach ($categories as $c): ?>
+                                   <option value="<?= $c['category_id'] ?>"
+                                    <?= ($c['category_id'] == $stocks['category_id']) ? 'selected' : '' ?>>
+                                    <?= $c['name'] ?>
+                                   </option>
+                                <?php endforeach; ?>
+                         </select>
+                </div>
+
                 <div class="d-flex justify-content-between">
                     <a href="<?= base_url('stock') ?>" class="btn btn-secondary">⬅ Back</a>
                     <button type="submit" class="btn btn-success">💾 Update</button>

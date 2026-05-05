@@ -6,6 +6,6 @@ class Login extends BaseController
 {
     public function index()
     {
-        return view('login.php'); // create this view later
+        return view('login'); // create this view later
     }
-}
+} 

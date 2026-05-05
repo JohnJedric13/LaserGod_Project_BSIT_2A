@@ -7,9 +7,7 @@
 
     <div class="card shadow">
         <div class="card-header d-flex justify-content-between align-items-center">
-            <h4 class="mb-0">📚 Student Management</h4>
-            
-            <a href="student/create" class="btn btn-primary">+ Add Student</a>
+            <h4 class="mb-0">📚 Users</h4>
         </div>
 
         <div class="card-body">
@@ -20,27 +18,23 @@
                         <th>ID</th>
                         <th>Full Name</th>
                         <th>Email</th>
-                        <th>School Year</th>
-                        <th>Birthday</th>
-                        <th>Address</th>
+                        <!-- <th>Password</th> -->
                         <th width="150">Action</th>
                     </tr>
                 </thead>
                 <tbody>
 
-                <?php foreach ($student as $row): ?>
+                <?php foreach ($user as $row): ?>
                     <tr>
                         <td><?= $row['id'] ?></td>
                         <td><?= $row['fullname'] ?></td>
                         <td><?= $row['email'] ?></td>
-                        <td><?= $row['schoolyear'] ?></td>
-                        <td><?= $row['birthday'] ?></td>
-                        <td><?= $row['address'] ?></td>
+                        <!-- <td><?= $row['password'] ?></td> -->
                         <td>
-                            <a href="/student/edit/<?= $row['id'] ?>" class="btn btn-warning btn-sm">Edit</a>
+
                             <a href="/student/delete/<?= $row['id'] ?>" 
                                class="btn btn-danger btn-sm"
-                               onclick="return confirm('Are you sure you want to delete this student?')">
+                               onclick="return confirm('Are you sure you want to delete this user?')">
                                Delete
                             </a>
                             
@@ -59,6 +53,5 @@
     </div>
 
 </div>
-
 
 <?= $this->endSection() ?>

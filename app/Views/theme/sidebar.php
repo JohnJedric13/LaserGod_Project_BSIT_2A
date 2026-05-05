@@ -12,7 +12,7 @@
     top: 0;
     height: 100%;
     width: 4px;
-    background: orange;
+    background: blue;
     border-radius: 0 3px 3px 0;
 
     transform: scaleY(0);
@@ -67,56 +67,58 @@ body.dark-mode .main-sidebar .nav-link:hover {
     background-color: rgba(255, 255, 255, 0) !important; /* slightly lighter bg on hover/active */
 }
 
+.table th { background-color: #343a40; color: white; }
+
 </style>
 
 
 <aside class="main-sidebar sidebar-light-light sidebar-light elevation-5" id="mainSidebar">
 <div class="brand-link bg-warning" id="brandLink" style="cursor: default; border-bottom: 1px rgba(255, ,255, 255);">
-    <img src="<?= base_url('assets/adminlte/dist/img/AdminLTELogo.png') ?>" 
-         alt="AdminLTE Logo" 
+    <img src="<?= base_url('assets/adminlte/dist/img/MainStore.png') ?>" 
+         alt="Main Store" 
          class="brand-image img-circle elevation-3" 
          style="opacity: .8">
-    <span class="brand-text font-weight-light" style="color: white">Students List</span>
+    <span class="brand-text font-weight-light" style="color: white">Sari Sari Store</span>
 </div>
   <div class="sidebar">
     <nav class="mt-2">
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
        <li class="nav-item">
-        <a href="<?= base_url('/dashboard') ?>" class="nav-link <?= is_active(1, '/dashboard') ?>">
+        <a href="<?= base_url('dashboard') ?>" class="nav-link <?= is_active(1, 'dashboard') ?>">
          <i class="nav-icon fas fa-tachometer-alt"></i>
          <p>Dashboard</p>
        </a>
      </li>
-      <li class="nav-item">
-      <a href="<?= base_url('log') ?>" class="nav-link <?= is_active(1, 'log') ?>">
-        <i class="nav-icon fas fa-history"></i>
-        <p>Activity Logs</p>
+      <li class="nav-item"> 
+      <a href="<?= base_url('stock') ?>" class="nav-link <?= is_active(1, 'stock') ?>">
+        <i class="nav-icon fas fa-store"></i>
+        <p>Products</p>
       </a>
-    </li>
-    <li class="nav-item">
-      <a href="<?= base_url('person') ?>" class="nav-link <?= is_active(1, 'person') ?>">
+    </li> 
+    <!-- <li class="nav-item">
+      <a href="<?= base_url('student') ?>" class="nav-link <?= is_active(1, 'student') ?>">
         <i class="nav-icon fas fa-user-friends"></i>
-        <p>Person</p>
+        <p>Student</p>
+      </a>
+    </li> -->
+    <li class="nav-item">
+      <a href="<?= base_url('category') ?>" class="nav-link <?= is_active(1, 'category') ?>">
+        <i class="nav-icon fas fa-user"></i>
+        <p>Categories</p>
       </a>
     </li>
-    <li class="nav-item">
-      <a href="<?= base_url('profiling') ?>" class="nav-link <?= is_active(1, 'profiling') ?>">
-        <i class="nav-icon fas fa-users"></i>
-        <p>Profiling</p>
-      </a>
-    </li>
-    <li class="nav-item">
+    <!-- <li class="nav-item"> 
       <a href="<?= base_url('student') ?>" class="nav-link <?= is_active(1, 'student') ?>">
         <i class="nav-icon fas fa-users"></i>
         <p>Student</p>
       </a>
-    </li>
+    </li> -->
      <li class="nav-item">
-      <a href="<?= base_url('users') ?>" class="nav-link <?= is_active(1, 'users') ?>">
+      <a href="<?= base_url('user') ?>" class="nav-link <?= is_active(1, 'user') ?>">
         <i class="nav-icon fas fa-user-lock"></i>
         <p>User Accounts</p>
       </a>
-    </li>
+    </li> 
   </ul>
 </nav>
 </div> 

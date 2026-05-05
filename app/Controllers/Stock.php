@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\StockModel;
+use App\Models\CategoryModel;
 use CodeIgniter\Controller;
 
 class Stock extends BaseController
@@ -12,12 +13,18 @@ class Stock extends BaseController
         $model = new StockModel();
         $data['stocks'] = $model->findAll();
 
+        $data['stocks'] = $model->getProductsWithCategory();
+
         return view('stock/index', $data);
     }
 
     public function create()
     {
-        return view('stock/create');
+        $categoryModel = new CategoryModel();
+
+        $data['categories'] = $categoryModel->findAll();
+
+        return view('stock/create', $data);
     }
 
     public function store()
@@ -29,7 +36,8 @@ class Stock extends BaseController
             'quantity' => $this->request->getPost('quantity'),
             'price' => $this->request->getPost('price'),
             'expire' => $this->request->getPost('expire'),
-            'created_at' => $this->request->getPost('created_at')
+            'created_at' => $this->request->getPost('created_at'),
+            'category_id' => $this->request->getPost('category_id')
         ];
         $model->save($data);
         return redirect()->to(base_url('stock'));
@@ -38,7 +46,10 @@ class Stock extends BaseController
     public function edit($id)
     {
         $model = new StockModel();
+        $categoryModel = new CategoryModel();
+
         $data['stocks'] = $model->find($id);
+        $data['categories'] = $categoryModel->findAll();
 
         return view('stock/edit', $data);
     }
@@ -47,11 +58,15 @@ class Stock extends BaseController
     {
         $model = new StockModel();
 
+        $categoryModel = new CategoryModel();
+        //$data['categories'] = $categoryModel->findAll();
+
         $model->update($id, [
             'product' => $this->request->getPost('product'),
             'quantity' => $this->request->getPost('quantity'),
             'price' => $this->request->getPost('price'),
             'expire' => $this->request->getPost('expire'),
+            'category_id' => $this->request->getPost('category_id'),
         ]);
 
         return redirect()->to('stock');

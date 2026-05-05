@@ -1,4 +1,4 @@
-<?php
+<?php   
 include('db.php');
 
 if(isset($_POST['login'])) {
@@ -10,7 +10,7 @@ if(isset($_POST['login'])) {
 
     if ($user && password_verify($password, $user['password'])) {
         $_SESSION['user'] = $user['username'];
-        header("location: index.php");
+        header("location: <?= base_url('stock') ?>");
     } else {
         echo "<p>Invalid username or password.</p>";
     }
@@ -52,12 +52,24 @@ if(isset($_POST['login'])) {
         
         <h3 class="text-center mb-4">Welcome Back 👋</h3>
 
-        <form method="post" action="stock">
+        <?php if (session()->getFlashdata('error')): ?>
+        <div style="color:red;">
+        <?= session()->getFlashdata('error'); ?>
+        </div>
+        <?php endif; ?>
+
+        <form method="post" action="/auth">
             
-            <!-- Username -->
+            <!-- Username 
             <div class="mb-3">
                 <label class="form-label">Username</label>
                 <input type="text" name="username" class="form-control" placeholder="Enter username" required>
+            </div> -->
+
+            <!-- Email -->
+            <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="email" name="email" class="form-control" placeholder="Enter Email" required>
             </div>
 
             <!-- Password -->
@@ -74,6 +86,12 @@ if(isset($_POST['login'])) {
             </div>
 
         </form>
+
+        <?php if (session()->getFlashdata('success')): ?>
+        <div style="color:red;">
+        <?= session()->getFlashdata('success'); ?>
+        </div>
+        <?php endif; ?>
 
         <!-- Register -->
         <div class="text-center mt-3">

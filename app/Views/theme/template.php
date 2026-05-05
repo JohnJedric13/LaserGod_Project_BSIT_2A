@@ -22,6 +22,8 @@
   <link rel="stylesheet" href="<?= base_url('assets/adminlte/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') ?>">
   <link rel="stylesheet" href="<?= base_url('assets/adminlte/plugins/toastr/toastr.min.css') ?>">
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -36,7 +38,7 @@
   <?= $this->renderSection('content') ?>
 
  <footer class="main-footer no-print">
-    <strong>Copyright &copy; 2025 <a href="#">Glenn IT Solutions</a> </strong>
+    <strong>Copyright &copy; 2025 <a href="#">Inventory</a> </strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
       <b>Version</b> CI4.v1

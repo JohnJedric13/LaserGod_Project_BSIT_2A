@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Add Student</title>
+    <title>Add Product</title>
 
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -47,6 +47,15 @@
                 <div class="mb-3">
                     <label class="form-label">Expiration</label>
                     <input type="date" name="expire" class="form-control" placeholder="Enter Expiration Date">
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label">Category</label>
+                    <select name="category_id">
+                        <?php foreach ($categories as $c): ?>
+                         <option value="<?= $c['category_id'] ?>"><?= $c['name'] ?></option>
+                        <?php endforeach; ?>
+                    </select>
                 </div>
 
                 <div class="d-flex justify-content-between">

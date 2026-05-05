@@ -13,8 +13,16 @@ class StockModel extends Model
         'product',
         'quantity',
         'price',
-        'expire'
+        'expire',
+        'category_id'
     ];
+
+    public function getProductsWithCategory()
+    {
+        return $this->select('stocks.*, categories.name as category_name')
+                    ->join('categories', 'categories.category_id = stocks.category_id')
+                    ->findAll();
+    }
 
     protected $useTimestamps = true;
     protected $createdField  = 'created_at';

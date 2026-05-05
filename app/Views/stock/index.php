@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
-    <title>Student List</title>
+    <title>Inventory List</title> -->
 
-    <!-- Bootstrap 5 CDN -->
+    <!-- Bootstrap 5 CDN 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
@@ -22,8 +22,13 @@
         }
     </style>
 </head>
-<body> 
+<body> -->
 
+<?= $this->extend('theme/template') ?>
+
+<?= $this->section('content') ?>
+
+<div class="content-wrapper">
 <div class="container mt-5">
 
     <div class="card shadow">
@@ -44,7 +49,7 @@
                         <th>Price</th>
                         <th>Expiration</th>
                         <th>Purchased</th>
-                        <th>Updated</th>
+                        <th>Category</th>
                         <th width="150">Action</th>
                     </tr>
                 </thead>
@@ -55,10 +60,10 @@
                         <td><?= $row['id'] ?></td>
                         <td><?= $row['product'] ?></td>
                         <td><?= $row['quantity'] ?></td>
-                        <td><?= $row['price'] ?></td>
+                        <td>$<?= $row['price'] ?></td>
                         <td><?= $row['expire'] ?></td>
                         <td><?= $row['created_at'] ?></td>
-                        <td><?= $row['updated_at'] ?></td>
+                        <td><?= $row['category_name'] ?></td>
                         <td>
                             <a href="/stock/edit/<?= $row['id'] ?>" class="btn btn-warning btn-sm">Edit</a>
                             <a href="/stock/delete/<?= $row['id'] ?>" 
@@ -83,5 +88,4 @@
 
 </div>
 
-</body>
-</html>
+<?= $this->endSection() ?>
