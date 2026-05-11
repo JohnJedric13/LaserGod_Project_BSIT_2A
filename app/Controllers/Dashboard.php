@@ -19,6 +19,12 @@ class Dashboard extends BaseController
      $query = $db->query('SELECT * FROM categories');
      $data['categories'] = $query->getNumRows();
 
+     $query = $db->query('SELECT * FROM sales');
+     $data['sales'] = $query->getNumRows();
+
+     
+
+
      //$model = new StockModel(); // or your actual model
      //$data['stocks'] = $model->countAll(); // example: total count
 

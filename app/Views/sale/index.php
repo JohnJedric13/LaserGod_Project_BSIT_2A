@@ -7,7 +7,7 @@
 
     <div class="card shadow">
         <div class="card-header d-flex justify-content-between align-items-center">
-            <h4 class="mb-0">📚 Users</h4>
+            <h4 class="mb-0">Sales</h4>
         </div>
 
         <div class="card-body">
@@ -16,26 +16,22 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>UserName</th>
-                        <th>Email</th>
-                        <th>Role</th>
+                        <th>Total</th>
+                        <th>Created</th>
                         <th width="150">Action</th>
                     </tr>
                 </thead>
                 <tbody>
 
-                <?php foreach ($user as $row): ?>
+                <?php foreach ($sales as $row): ?>
                     <tr>
-                        <td><?= $row['user_id'] ?></td>
-                        <td><?= $row['username'] ?></td>
-                        <td><?= $row['email'] ?></td>
-                        <td><?= $row['role'] ?></td>
-                        <!-- <td><?= $row['password'] ?></td> -->
+                        <td><?= $row['id'] ?></td>
+                        <td>₱<?= $row['total'] ?></td>
+                        <td><?= $row['created_at'] ?></td>
                         <td>
-
-                            <a href="/student/delete/<?= $row['user_id'] ?>" 
+                            <a href="/sale/delete/<?= $row['id'] ?>" 
                                class="btn btn-danger btn-sm"
-                               onclick="return confirm('Are you sure you want to delete this user?')">
+                               onclick="return confirm('Delete this transaction?')">
                                Delete
                             </a>
                             
@@ -45,15 +41,10 @@
 
                 </tbody>
             </table>
-            <div class="d-flex justify-content-end gap-2 mb-3">
-    <a href="/login" class="btn btn-danger">
-        Logout
-    </a>
 
         </div>
     </div>
 
 </div>
-
 
 <?= $this->endSection() ?>

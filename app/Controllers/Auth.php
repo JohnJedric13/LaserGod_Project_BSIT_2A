@@ -16,8 +16,9 @@ class Auth extends BaseController
         $model = new UserModel();
 
         $data = [
-            'fullname' => $this->request->getPost('fullname'),
+            'username' => $this->request->getPost('username'),
             'email'    => $this->request->getPost('email'),
+            'role'    => $this->request->getPost('role'),
             'password' => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT)
         ];
 
@@ -46,8 +47,8 @@ class Auth extends BaseController
             if (password_verify($password, $user['password'])) {
 
                 $sessionData = [
-                    'id' => $user['id'],
-                    'fullname' => $user['fullname'],
+                    'user_id' => $user['user_id'],
+                    'username' => $user['username'],
                     'isLoggedIn' => true
                 ];
 

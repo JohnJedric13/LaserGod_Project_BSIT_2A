@@ -11,9 +11,11 @@ class Stock extends BaseController
     public function index()
     {
         $model = new StockModel();
-        $data['stocks'] = $model->findAll();
+        $categoryModel = new CategoryModel();
 
+        $data['stocks'] = $model->findAll();
         $data['stocks'] = $model->getProductsWithCategory();
+        $data['categories'] = $categoryModel->findAll();
 
         return view('stock/index', $data);
     }

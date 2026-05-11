@@ -69,6 +69,72 @@ body.dark-mode .main-sidebar .nav-link:hover {
 
 .table th { background-color: #343a40; color: white; }
 
+
+/* Pos 
+body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            padding: 30px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            max-width: 600px;
+            margin: auto;
+            background: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        #items div {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        select, input {
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 100%;
+        }
+
+        input[type="number"] {
+            max-width: 100px;
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button[type="button"] {
+            background-color: #3498db;
+            color: white;
+        }
+
+        button[type="button"]:hover {
+            background-color: #2980b9;
+        }
+
+        button[type="submit"] {
+            background-color: #2ecc71;
+            color: white;
+            width: 100%;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #27ae60;
+        } */
+
 </style>
 
 
@@ -78,7 +144,7 @@ body.dark-mode .main-sidebar .nav-link:hover {
          alt="Main Store" 
          class="brand-image img-circle elevation-3" 
          style="opacity: .8">
-    <span class="brand-text font-weight-light" style="color: white">Sari Sari Store</span>
+    <span class="brand-text font-weight-light" style="color: white">Jane Ny Sari Sari Store</span>
 </div>
   <div class="sidebar">
     <nav class="mt-2">
@@ -95,30 +161,42 @@ body.dark-mode .main-sidebar .nav-link:hover {
         <p>Products</p>
       </a>
     </li> 
-    <!-- <li class="nav-item">
-      <a href="<?= base_url('student') ?>" class="nav-link <?= is_active(1, 'student') ?>">
-        <i class="nav-icon fas fa-user-friends"></i>
-        <p>Student</p>
+    <li class="nav-item">
+      <a href="<?= base_url('supplies') ?>" class="nav-link <?= is_active(1, 'supplies') ?>">
+        <i class="nav-icon fas fa-box"></i>
+        <p>Supply Items</p>
       </a>
-    </li> -->
+    </li>
     <li class="nav-item">
       <a href="<?= base_url('category') ?>" class="nav-link <?= is_active(1, 'category') ?>">
-        <i class="nav-icon fas fa-user"></i>
+        <i class="nav-icon fas fa-book"></i>
         <p>Categories</p>
       </a>
     </li>
-    <!-- <li class="nav-item"> 
-      <a href="<?= base_url('student') ?>" class="nav-link <?= is_active(1, 'student') ?>">
+    <li class="nav-item"> 
+      <a href="<?= base_url('pos') ?>" class="nav-link <?= is_active(1, 'pos') ?>">
         <i class="nav-icon fas fa-users"></i>
-        <p>Student</p>
+        <p>Add Sale</p>
       </a>
-    </li> -->
-     <li class="nav-item">
+    </li> 
+       <li class="nav-item">
+      <a href="<?= base_url('sale') ?>" class="nav-link <?= is_active(1, 'sale') ?>">
+        <i class="nav-icon fas fa-dollar"></i>
+        <p>Sales</p>
+      </a>
+    </li>
+       <li class="nav-item">
       <a href="<?= base_url('user') ?>" class="nav-link <?= is_active(1, 'user') ?>">
         <i class="nav-icon fas fa-user-lock"></i>
         <p>User Accounts</p>
       </a>
-    </li> 
+    </li>
+    <li class="nav-item">
+      <a href="<?= base_url('/pos2/dashboard') ?>" class="nav-link <?= is_active(1, '/pos2/dashboard') ?>">
+        <i class="nav-icon fas fa-tachometer-alt"></i>
+        <p>POS Sales DashBoard</p>
+      </a>
+    </li>
   </ul>
 </nav>
 </div> 

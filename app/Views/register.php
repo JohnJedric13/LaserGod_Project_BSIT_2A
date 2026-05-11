@@ -106,9 +106,13 @@ if(isset($_POST['users'])) {
         <h2>Register</h2>
 
         <form method="post" action="/save">
-            <input type="text" name="fullname" placeholder="Fullname" required>
+            <input type="text" name="username" placeholder="Fullname" required>
             <input type="email" name="email" placeholder="Email" required>
             <input type="password" name="password" placeholder="Password" required>
+            <select name="role" placeholder="Role" required>
+                <option value="admin">Admin</option>
+                <option value="worker">Worker</option>
+            </select>
             <button type="submit" name="register" class="register-btn">Register</button>
         </form>
 
