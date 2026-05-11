@@ -48,3 +48,14 @@ $routes->get('category', 'Category::index');
 $routes->get('category/create', 'Category::create');
 $routes->post('category/store', 'Category::store');
 $routes->get('category/delete/(:num)', 'Category::delete/$1');
+
+//Pos
+$routes->get('/pos', 'Pos::index');
+$routes->get('/pos2/dashboard', 'Pos::dashboard');
+$routes->post('/pos/checkout', 'Pos::checkout');
+$routes->get('/sale', 'Sales::index');
+$routes->get('/sale/delete/(:num)', 'Sale::delete/$1');
+
+//Supply
+$routes->get('/supplies', 'SupplyController::index');
+$routes->post('/supplies/save', 'SupplyController::save');
