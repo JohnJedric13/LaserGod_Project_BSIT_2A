@@ -17,7 +17,7 @@
                     <tr>
                         <th>ID</th>
                         <th>Total</th>
-                        <th>Created</th>
+                        <th>Date</th>
                         <th width="150">Action</th>
                     </tr>
                 </thead>

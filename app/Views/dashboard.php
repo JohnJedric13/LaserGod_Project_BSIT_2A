@@ -41,9 +41,9 @@
             <h3 class="count-numbers"><?= $categories ?></h3>
             <p>Categories</p>
           </div>
-          <div class="icon">
+          <!-- <div class="icon">
             <i class="ion ion-stats-bars"></i>
-          </div>
+          </div> -->
           <a href="/category" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
@@ -54,7 +54,7 @@
             <p>Users</p>
           </div>
           <div class="icon">
-            <i class="ion ion-person-add"></i>
+            <i class="ion ion-person"></i>
           </div>
           <a href="/user" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>

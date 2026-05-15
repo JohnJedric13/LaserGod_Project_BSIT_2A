@@ -61,7 +61,7 @@
                     <tr>
                         <th>ID</th>
                         <th>Product</th>
-                        <th>Quantity</th>
+                        <th>Stocks</th>
                         <th>Price</th>
                         <th>Expiration</th>
                         <th>Purchased</th>

@@ -31,7 +31,7 @@ if(isset($_POST['login'])) {
 
     <style>
         body {
-            background: linear-gradient(135deg, #4e73df, #1cc88a);
+            background: linear-gradient(135deg, #0e48f5, #1cc88a);
             height: 100vh;
         }
         .login-card {
