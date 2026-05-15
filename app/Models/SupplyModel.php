@@ -12,4 +12,7 @@ class SupplyModel extends Model
         'supplier_name',
         'total_items'
     ];
+
+    protected $useTimestamps = true;
+    protected $createdField  = 'created_at';
 }

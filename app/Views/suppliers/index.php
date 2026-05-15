@@ -1,0 +1,55 @@
+<?= $this->extend('theme/template') ?>
+
+<?= $this->section('content') ?>
+
+<div class="content-wrapper">
+<div class="container mt-5">
+
+    <div class="card shadow">
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <h4 class="mb-0">Suppliers</h4>
+        </div>
+
+        <div class="card-body">
+            <table class="table table-hover table-bordered align-middle text-center">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Supplier Name</th>
+                        <th>Total Items</th>
+                        <th>Date</th>
+                        <th width="150">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                <?php foreach ($supplies as $row): ?>
+                    <tr>
+                        <td><?= $row['id'] ?></td>
+                        <td><?= $row['supplier_name'] ?></td>
+                        <td><?= $row['total_items'] ?></td>
+                        <td><?= $row['created_at'] ?></td>
+                        <td>
+                            <a href="/stock/delete/<?= $row['id'] ?>" 
+                               class="btn btn-danger btn-sm"
+                               onclick="return confirm('Are you sure you want to remove this product?')">
+                               Delete
+                            </a>
+                            
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+
+                </tbody>
+            </table>
+            <!-- <div class="d-flex justify-content-end gap-2 mb-3">
+               <a href="/login" class="btn btn-danger">
+                 Logout
+                 </a> -->
+
+        </div> 
+    </div>
+
+</div>
+
+<?= $this->endSection() ?>

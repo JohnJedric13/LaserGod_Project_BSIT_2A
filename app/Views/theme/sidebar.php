@@ -197,6 +197,12 @@ body {
         <p>POS Sales DashBoard</p>
       </a>
     </li>
+    <li class="nav-item">
+      <a href="<?= base_url('/suppliers') ?>" class="nav-link <?= is_active(1, 'suppliers') ?>">
+        <i class="nav-icon fas fa-user"></i>
+        <p>Suppliers</p>
+      </a>
+    </li>
   </ul>
 </nav>
 </div> 
