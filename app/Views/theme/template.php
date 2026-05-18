@@ -94,6 +94,7 @@
 <script src="<?= base_url('assets/adminlte/plugins/datatables-buttons/js/buttons.print.min.js') ?>"></script>
 <script src="<?= base_url('assets/adminlte/plugins/datatables-buttons/js/buttons.colVis.min.js') ?>"></script>
 <script src="<?= base_url('assets/adminlte/plugins/toastr/toastr.min.js') ?>"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <?= $this->renderSection('scripts') ?>
 </body>
 </html>
@@ -109,7 +110,7 @@ if(savedTheme === 'dark'){
     document.body.classList.add('dark-mode');
 
     // Navbar
-    navbar.classList.remove('navbar-warning');
+    navbar.classList.remove('navbar-primary');
     navbar.classList.add('navbar-dark','bg-dark');
 
     // Sidebar
@@ -117,7 +118,7 @@ if(savedTheme === 'dark'){
     sidebar.classList.add('sidebar-dark-primary');
 
     // Brand link
-    brandLink.classList.remove('bg-warning');
+    brandLink.classList.remove('bg-primary');
     brandLink.classList.add('bg-dark');
 
     themeToggle.innerHTML = '<i class="fas fa-moon"></i>';

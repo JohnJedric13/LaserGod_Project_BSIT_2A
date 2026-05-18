@@ -14,6 +14,12 @@
 
         <div class="card-body">
 
+            <?php if(session()->getFlashdata('success')): ?>
+                <div class="alert alert-success">
+                    <?= session()->getFlashdata('success') ?>
+                </div>
+            <?php endif; ?>
+
             <table class="table table-hover table-bordered align-middle text-center">
                 <thead>
                     <tr>

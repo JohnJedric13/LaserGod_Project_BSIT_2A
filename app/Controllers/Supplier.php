@@ -16,4 +16,12 @@ class Supplier extends BaseController
 
         return view('suppliers/index', $data);
     }
+
+    public function delete($id)
+    {
+        $model = new SupplyModel();
+        $model->delete($id);
+
+        return redirect()->to('suppliers');
+    }
 }

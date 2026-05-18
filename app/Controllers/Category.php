@@ -31,7 +31,7 @@ class Category extends BaseController
             'name' => $this->request->getPost('name')
         ];
         $model->save($data);
-        return redirect()->to(base_url('category'));
+        return redirect()->to(base_url('category'))->with('success', 'New Category Added');
     }
 
     public function delete($id)

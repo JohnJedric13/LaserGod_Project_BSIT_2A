@@ -13,6 +13,4 @@ class SupplyModel extends Model
         'total_items'
     ];
 
-    protected $useTimestamps = true;
-    protected $createdField  = 'created_at';
 }

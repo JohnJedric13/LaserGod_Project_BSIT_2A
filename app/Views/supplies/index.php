@@ -8,7 +8,7 @@
     <div class="card shadow">
 
         <div class="card-header bg-dark text-white">
-            <h3>Supply Multiple Products</h3>
+            <h3>Restock Products</h3>
         </div>
 
         <div class="card-body">
@@ -32,7 +32,7 @@
                         <tr>
                             <th>Product</th>
                             <th>Quantity</th>
-                            <th>Cost</th>
+                            <!-- <th>Cost</th> -->
                             <th width="180">Action</th>
                         </tr>
                     </thead>
@@ -54,17 +54,15 @@
                             </td>
 
                             <td>
-                                <input type="number" name="quantity[]" class="form-control" required>
+                                <input type="number" name="quantity[]" class="form-control"
+                                value="1" min="1" required>
                             </td>
 
-                            <td>
+                            <!-- <td>
                                 <input type="number" step="1" name="cost[]" class="form-control" required>
-                            </td>
+                            </td> -->
 
                             <td>
-                                <button type="button" class="btn btn-success addRow">
-                                    +
-                                </button>
                                 <button type="button" class="btn btn-danger removeRow">
                                     X
                                 </button>
@@ -74,6 +72,9 @@
                 </table>
                 <button type="submit" class="btn btn-primary">
                     Save Supply
+                </button>
+                <button type="button" class="btn btn-success addRow">
+                                    +Add
                 </button>
             </form>    
         </div>
@@ -105,11 +106,8 @@ document.addEventListener('click', function(e) {
             </td>
 
             <td>
-                <input type="number" name="quantity[]" class="form-control" required>
-            </td>
-
-            <td>
-                <input type="number" step="1" name="cost[]" class="form-control" required>
+                <input type="number" name="quantity[]" class="form-control" 
+                value="1" min="1" required>
             </td>
 
             <td>

@@ -15,22 +15,22 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Supplier Name</th>
-                        <th>Total Items</th>
-                        <th>Date</th>
+                        <th>Supply</th>
+                        <th>Product</th>
+                        <th>Amount</th>
                         <th width="150">Action</th>
                     </tr>
                 </thead>
                 <tbody>
 
-                <?php foreach ($supplies as $row): ?>
+                <?php foreach ($supply_items as $row): ?>
                     <tr>
                         <td><?= $row['id'] ?></td>
-                        <td><?= $row['supplier_name'] ?></td>
-                        <td><?= $row['total_items'] ?></td>
-                        <td><?= $row['created_at'] ?></td>
+                        <td><?= $row['supply_id'] ?></td>
+                        <td><?= $row['product_id'] ?></td>
+                        <td><?= $row['quantity'] ?></td>
                         <td>
-                            <a href="/suppliers/delete/<?= $row['id'] ?>" 
+                            <a href="/stock/delete/<?= $row['id'] ?>" 
                                class="btn btn-danger btn-sm"
                                onclick="return confirm('Are you sure you want to remove this product?')">
                                Delete

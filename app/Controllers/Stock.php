@@ -42,7 +42,7 @@ class Stock extends BaseController
             'category_id' => $this->request->getPost('category_id')
         ];
         $model->save($data);
-        return redirect()->to(base_url('stock'));
+        return redirect()->to(base_url('stock'))->with('success', 'New Product Added');
     }
 
     public function edit($id)

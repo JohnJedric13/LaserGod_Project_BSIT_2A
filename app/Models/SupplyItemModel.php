@@ -11,7 +11,6 @@ class SupplyItemModel extends Model
     protected $allowedFields = [
         'supply_id',
         'product_id',
-        'quantity',
-        'cost'
+        'quantity'
     ];
 }

@@ -22,6 +22,9 @@ class Pos extends BaseController
         $saleItemModel = new SaleItemModel();
         $stockModel = new StockModel();
 
+        $cash = $this->request->getPost('cash');
+        
+
         $stocks = $this->request->getPost('stocks');
         $quantities = $this->request->getPost('quantities');
 
@@ -32,6 +35,7 @@ class Pos extends BaseController
             $stock = $stockModel->find($product_id);
             $qty = $quantities[$i];
             $total += $stock['price'] * $qty;
+            $total = $total;
         }
 
         // Save sale
@@ -42,13 +46,16 @@ class Pos extends BaseController
             $stock = $stockModel->find($product_id);
             $qty = $quantities[$i];
             $subtotal = $stock['price'] * $qty;
+            $change = $cash - $total;
 
             $saleItemModel->save([
                 'sale_id'   => $sale_id,
                 'product_id'=> $product_id,
                 'quantity'  => $qty,
                 'price'     => $stock['price'],
-                'subtotal'  => $subtotal
+                'subtotal'  => $subtotal,
+                'cash'      => $cash,
+                'change'    => $change,
             ]);
 
             // Deduct stock
@@ -57,7 +64,17 @@ class Pos extends BaseController
             ]);
         }
 
-        return redirect()->to('/pos');
+        // NOW calculate change
+        //$change = $cash - $total;
+
+        // Save sale
+        //$sale_id = $saleModel->insert([
+        //'total' => $total
+        //]);
+
+    // continue your save item loop here...
+
+        return redirect()->to('/pos')->with('success', 'Sale Added');
     }
 
     public function dashboard()

@@ -20,12 +20,19 @@
         </a>
        </li>
 
-        <!-- <li class="nav-item">
+        <li class="nav-item">
+            <a style="color: #fff;" class="nav-link" href="#">
+                <?= session()->get('username') ?> 
+                <i class="far fa-user-circle" style="color: #fff; margin-left: 5px;"></i>
+            </a>
+        </li>
+
+        <li class="nav-item">
             <a style="color: #fff;" class="nav-link" href="#">
                 <?= session()->get('email') ?> 
                 <i class="far fa-user-circle" style="color: #fff; margin-left: 5px;"></i>
             </a>
-        </li>  -->
+        </li> 
 
         <li class="nav-item">
             <a class="nav-link" href="/login" style="color: #fff;">

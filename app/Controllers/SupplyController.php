@@ -27,7 +27,7 @@ class SupplyController extends BaseController
 
         $productIds = $this->request->getPost('product_id');
         $quantities = $this->request->getPost('quantity');
-        $costs = $this->request->getPost('cost');
+        //$costs = $this->request->getPost('cost');
 
         $totalItems = array_sum($quantities);
 
@@ -41,13 +41,13 @@ class SupplyController extends BaseController
         foreach ($productIds as $key => $productId) {
 
             $qty = $quantities[$key];
-            $cost = $costs[$key];
+            //$cost = $costs[$key];
 
             $supplyItemModel->insert([
                 'supply_id' => $supplyId,
                 'product_id' => $productId,
                 'quantity' => $qty,
-                'cost' => $cost
+                //'cost' => $cost
             ]);
 
             $stock = $stockModel->find($productId);

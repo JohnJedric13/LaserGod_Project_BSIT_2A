@@ -88,7 +88,7 @@ body {
             background: #fff;
             padding: 25px;
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 10px rgb(74, 202, 45);
         }
 
         #items div {
@@ -203,6 +203,12 @@ body {
         <p>Suppliers</p>
       </a>
     </li>
+    <!-- <li class="nav-item">
+      <a href="<?= base_url('/supplyitems') ?>" class="nav-link <?= is_active(1, 'supplyitems') ?>">
+        <i class="nav-icon fas fa-user"></i>
+        <p>Suppliers</p> 
+      </a>
+    </li> -->
   </ul>
 </nav>
 </div> 
