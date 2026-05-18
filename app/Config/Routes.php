@@ -61,3 +61,5 @@ $routes->get('/supplies', 'SupplyController::index');
 $routes->get('/suppliers', 'Supplier::index');
 $routes->get('/suppliers', 'Supplier::delete/$1');
 $routes->post('/supplies/save', 'SupplyController::save');
+$routes->get('/supplyitems', 'SupplyItem::index');
+$routes->get('/supplyitems', 'SupplyItem::delete/$1');
